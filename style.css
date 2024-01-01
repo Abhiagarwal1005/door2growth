@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Woffs2';
-    src: url('fonts/font.woff2');
+    src: url('font.woff2');
   }
 
 
@@ -183,7 +183,7 @@ h3 span.stop-blinking::before {
     width: 20rem;
     height: 20rem;
     border-radius: 42% 56% 72% 28% / 42% 42% 56% 48%;
-    background: #8f44fd url(Images/technology-idea-business-growth.svg);
+    background: #8f44fd url(technology-idea-business-growth.svg);
     background-size: cover;
     background-position: center;
     animation: morph 3.75s linear infinite;
