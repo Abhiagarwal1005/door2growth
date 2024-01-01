@@ -1,0 +1,215 @@
+@font-face {
+    font-family: 'Woffs2';
+    src: url('fonts/font.woff2');
+  }
+
+
+*{
+    font-family: 'Woffs2';
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: #ffffff;
+}
+
+body{
+    background-color: #000000;   
+    background-image: linear-gradient(to right, #081521,#280a537b);
+}
+
+#loader{
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  transition: all ease 0.7s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#loader h1{
+  font-size: 4vw;
+  color: transparent;
+  background: linear-gradient(to right, #20bbc1, #203ec1);
+  -webkit-background-clip: text;
+  position: absolute;
+  font-weight: 700;
+  opacity: 0;
+  animation-name: load;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-timing-function: linear;
+}
+#loader h1:nth-child(2){
+  animation-delay: 2s;
+}
+#loader h1:nth-child(3){
+  animation-delay: 3s;
+}
+
+@keyframes load {
+  0%{
+      opacity: 0;
+  }
+  10%{
+      opacity: 1;
+  }
+  90%{
+      opacity: 1;
+  }
+  100%{
+      opacity: 0;
+  }
+}
+
+
+#page-1{
+  height: 100vh;
+  width: 100%;
+}
+
+.hover-underline-animation {
+    font-size: 17px;
+    color: #aeaeae;
+    display: inline-block;
+    position: relative;
+}
+
+.hover-underline-animation::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: 
+  #0087ca;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after{
+    color: #ffffff;
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+#hero-section h2{
+  width: 100%;
+}
+
+
+h3 {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 600;
+}
+h3 span {
+  color: #BD53ED;
+  position: relative;
+}
+h3 span::before {
+  content: "";
+  height: 30px;
+  width: 2px;
+  position: absolute;
+  top: 50%;
+  right: -8px;
+  background: #BD53ED;
+  transform: translateY(-45%);
+  animation: blink 0.7s infinite;
+}
+h3 span.stop-blinking::before {
+  animation: none;
+}
+@keyframes blink {
+  50% { opacity: 0 }
+}
+
+
+#page-2{
+  min-height: 100vh;
+  width: 100%;
+  padding: 8vw 0;
+  position: relative;
+}
+
+#moving-text {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+#moving-text::-webkit-scrollbar {
+  display: none;
+}
+
+.con {
+  white-space: nowrap;
+  display: inline-block;
+  animation: move 10s linear infinite;
+}
+
+#moving-text h1 {
+  font-size: 9vw;
+  display: inline-block;
+  font-weight: 600;
+}
+
+#gola {
+  height: 4vw;
+  width: 4vw;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: #20bbc1;
+  margin: 1vw 2vw;
+}
+
+@keyframes move {
+  from {
+      transform: translateX(0);
+  }
+
+  to {
+      transform: translateX(-100%);
+  }
+}
+
+.blob{
+    overflow: hidden;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 42% 56% 72% 28% / 42% 42% 56% 48%;
+    background: #8f44fd url(Images/technology-idea-business-growth.svg);
+    background-size: cover;
+    background-position: center;
+    animation: morph 3.75s linear infinite;
+}
+
+
+@keyframes morph {
+    0%,
+    100% {
+      border-radius: 42% 56% 72% 28% / 42% 42% 56% 48%;
+    }
+    33% {
+      border-radius: 72% 28% 48% 48% / 28% 28% 72% 72%;
+    }
+    66% {
+      border-radius: 100% 56% 56% 100% / 100% 100% 56% 56%;
+    }
+  }
+
+@media(max-width:991px){
+    .sidebar{
+        background: rgba(9, 9, 9, 0.29);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
+    .sidebar a{
+        font-size: 20px;
+    }
+}
